@@ -13,8 +13,8 @@ resource "aws_eks_cluster" "eks_cluster" {
   ]
 }
 
-resource "null_resource" "update_kubeconfig" {
-  provisioner "local-exec" {
-    command = "aws eks --region eu-west-2 update-kubeconfig --name ${var.cluster_name}"
-  }
-}
+# resource "null_resource" "update_kubeconfig" {
+#   provisioner "local-exec" {
+#     command = "aws eks --region eu-west-2 update-kubeconfig --name ${var.cluster_name}"
+#   }
+# }
