@@ -12,4 +12,3 @@ output "config_map_aws_auth" {
     user_username = local.arn_components[length(local.arn_components) - 1]
   })
 }
-
