@@ -10,7 +10,7 @@ resource "aws_ecs_cluster_capacity_providers" "capacity_provider" {
 }
 
 resource "aws_ecs_capacity_provider" "capacity_provider" {
-  name = "${title(var.environment)}-ECS-CapacityProvider"
+  name = "${var.namespace}-${var.environment}-ecs-capacity-provider"
 
   auto_scaling_group_provider {
     auto_scaling_group_arn = aws_autoscaling_group.autoscaling_group.arn

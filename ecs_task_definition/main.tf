@@ -4,7 +4,7 @@ resource "aws_ecs_task_definition" "task_definition" {
   container_definitions = jsonencode([
     {
       name  = var.task_name
-      image = var.image_repository_url
+      image = var.ecr_repository_url
       logConfiguration = {
         logDriver = "awslogs"
         options = {
@@ -16,6 +16,7 @@ resource "aws_ecs_task_definition" "task_definition" {
       }
       memoryReservation = 128
       essential         = true
+      portMappings      = var.port_mappings
     }
   ])
 }

@@ -10,7 +10,7 @@ data "aws_iam_policy_document" "ecs_agent" {
 }
 
 resource "aws_iam_role" "ecs_agent" {
-  name               = "ecs-agent-${var.environment}"
+  name               = "ecs-agent-${var.namespace}-${var.environment}"
   assume_role_policy = data.aws_iam_policy_document.ecs_agent.json
 }
 
