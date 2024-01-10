@@ -26,3 +26,12 @@ variable "port_mappings" {
   description = "List of container and host ports for port mapping"
   default     = []
 }
+
+variable "secrets" {
+  type = list(object({
+    name      = string
+    valueFrom = string
+  }))
+  description = "List of secrets to add to container"
+  default     = []
+}

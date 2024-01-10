@@ -17,6 +17,7 @@ resource "aws_ecs_task_definition" "task_definition" {
       memoryReservation = 128
       essential         = true
       portMappings      = var.port_mappings
+      secrets           = var.secrets
     }
   ])
 }
