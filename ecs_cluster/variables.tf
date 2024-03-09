@@ -1,16 +1,6 @@
-variable "namespace" {
+variable "cluster_name" {
   type        = string
-  description = "The namespace to use for the resources"
-}
-
-variable "environment" {
-  type        = string
-  description = "The environment of the cluster"
-
-  validation {
-    condition     = contains(["dev", "staging", "prod"], var.environment)
-    error_message = "Allowed values for environment are \"dev\", \"staging\", or \"prod\"."
-  }
+  description = "The name of the ECS cluster"
 }
 
 variable "instance_type" {
@@ -21,10 +11,10 @@ variable "instance_type" {
 
 variable "vpc_id" {
   type        = string
-  description = "The ID of the VPC to create the cluster in"
+  description = "The ID of the VPC for the cluster"
 }
 
 variable "subnet_ids" {
   type        = list(string)
-  description = "The IDs of the subnets to create the cluster in"
+  description = "The IDs of the subnets for the cluster"
 }

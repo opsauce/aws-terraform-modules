@@ -1,6 +1,6 @@
 resource "aws_security_group" "ecs_security_group" {
-  name        = "${aws_ecs_cluster.cluster.name}-ecs-security-group"
-  description = "Controls access to the ECS cluster instances"
+  name        = "${aws_ecs_cluster.main.name}-ecs-security-group"
+  description = "Controls network access to/from the ECS cluster instances"
   vpc_id      = var.vpc_id
 
   ingress {

@@ -1,5 +1,5 @@
 resource "aws_autoscaling_group" "autoscaling_group" {
-  name                      = "${var.namespace}-${var.environment}-ecs-asg"
+  name                      = "${var.cluster_name}-ecs-asg"
   vpc_zone_identifier       = var.subnet_ids
   launch_configuration      = aws_launch_configuration.ecs_launch_config.name
   desired_capacity          = 1
